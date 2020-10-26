@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Weather Dashboard</h1>
+    </div>
+    <div>
+        <div class="clearfix">
+            <div class="col-4 float-left">
+                <nav class="navbar navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded">
+                    <h4>Search for a City:</h4>
+                        <form class="form-inline">
+                            <input id="city-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button id="search" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+
+                        <form id="currentWeatherInfo">
+                            <h4>Temperature: <span id=temp></span></h4>
+                            <h4>Wind Speed: <span id=windSpeed></span></h4>
+                            <h4>Humidity: <span id=humidity></span></h4>
+                            <h4>UV-Index: <span id=uvIndex></span></h4>
+
+                        </form>
+                    <form id="searchhistory" class="mt-1">
+  
+                    </form>
+                </nav>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="./weather.js"></script>
+</body>
+</html>
