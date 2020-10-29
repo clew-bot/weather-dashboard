@@ -2,7 +2,16 @@ $(document).ready(function() {
     console.log("rock and roll");
 var searchBtn = document.getElementById("search");
 
+let cityList = !localStorage.getItem('city list') ? [] : JSON.parse(localStorage.getItem('city list'));
 
+
+const renderList = () => {
+    cityList.map(city => {
+        const cityBtn = $('<li class="city-btn">')
+        $('.city-list').prepend(cityBtn.text(city))
+    })
+}
+renderList();
 var getSearch;
 var apiKey = "08b42de4b22b623511bd55d7959c6438"
 
@@ -11,6 +20,12 @@ function citySearch(city) {
     city.preventDefault();
     console.log("testing searchBtn func");
     var searchValue = $('#city-input').val();
+    cityList.push(searchValue);
+    localStorage.setItem('city list', JSON.stringify(cityList));
+
+    // refresh list after each search
+    $('.city-list').empty();
+    renderList();
 
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+ searchValue +"&appid="+ apiKey;
 $. ajax({
