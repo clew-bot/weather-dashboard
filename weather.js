@@ -16,6 +16,9 @@ renderList();
 var getSearch;
 var apiKey = "08b42de4b22b623511bd55d7959c6438"
 
+
+
+
 //main course //
 searchBtn.addEventListener("click", citySearch);
 function citySearch(city) {
@@ -52,9 +55,40 @@ $. ajax({
         console.log(currentUV);
         let uvColor = document.getElementById('uvIndex');
         console.log(uvColor);
+        let tempPic = document.getElementById('tempPic');
+        const mainTemp = everything.current.temp
+        JSON.stringify(mainTemp);
+
+
+        var temperature = document.getElementById('temp');
+
+        temperature.innerHTML = `${everything.current.temp} Fahrenheit`
+        //$('#temp').text(`${everything.current.temp}  Fahrenheit `);//
         
-        $('#temp').text(`${everything.current.temp}  Fahrenheit `);
-        $('#windSpeed').text(`${everything.current.wind_speed} Mph`);
+        console.log("maintemp is: " + mainTemp);
+        console.log("temppic is: " + tempPic);
+
+        //function to check temp and if temp add image //
+        function invokeTemp(temp) {
+            if (mainTemp > 80) {
+                console.log("successful");
+                tempPic.classList.add('fa-sun');
+            } else if (mainTemp < 79 && mainTemp > 65) {
+                tempPic.classList.add('fa-cloud-sun')
+            } else if (mainTemp < 65 && mainTemp > 50) {
+                tempPic.classList.add('fa-cloud-moon');
+            }
+
+        }
+        // if (mainTemp < 80) {
+        //     console.log("result 1")
+        //     tempPic.classList.add('fas fa-sun')
+        // }
+        invokeTemp(everything.current.temp)
+
+        console.log(everything.current.weather);
+       
+        $('#windSpeed').text(`${everything.current.wind_speed} MPH`);
         $('#humidity').text(`${everything.current.humidity}%`);
         uvColor.innerHTML = `${everything.current.uvi}`;
         if(currentUV <= 2) {
@@ -69,14 +103,14 @@ $. ajax({
         } else if ( currentUV > 11) {
                 uvColor.classList.add('extreme');
         }
-
+        
 
         var day1Time = document.getElementById('day1')
         day1Time.innerHTML = moment.unix(everything.daily[1].dt).format("MM/DD/YYYY");
         console.log(day1Time)
         $('#temp1').text(`${everything.daily[1].temp.day} Fahrenheit`)
         $('#humidity1').text(`${everything.daily[1].humidity}%`)
-
+        
         var day2Time = document.getElementById('day2')
         day2Time.innerHTML = moment.unix(everything.daily[2].dt).format("MM/DD/YYYY");
         console.log(day2Time)
@@ -101,7 +135,7 @@ $. ajax({
         $('#temp5').text(`${everything.daily[5].temp.day} Fahrenheit`)
         $('#humidity5').text(`${everything.daily[5].humidity}%`)
 
-
+       
 
     })
 })

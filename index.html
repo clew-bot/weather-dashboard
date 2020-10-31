@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>Welcome to the Weather Dashboard</h1>
-        <i class="fas fa-cloud-moon-rain"></i>
+      
 
 
     </div>
@@ -32,11 +32,11 @@
 
                         <!--Current weather information-->
                         <form id="currentWeatherInfo">
-                            <h4>Temperature: <span id=temp></span></h4>
+                            <h4>Temperature: <span id=temp></span><span id="tempPic" class="fas"> </span></h4>
                             <h4>Wind Speed: <span id=windSpeed></span></h4>
                             <h4>Humidity: <span id=humidity></span></h4>
                             <h4>UV-Index: <span id=uvIndex></span></h4>
-
+                            <div class="mainContainer"></div>
                         </form>
         
                 </nav>
@@ -50,6 +50,7 @@
                 <h4 id="day1"></h4>
                 <p>Temp: <span id="temp1"></span></p>
                 <p>Humidity: <span id="humidity1"></span></p>
+                <div class="day1picture"></div>
             </div>
         </div>
         <div class="card">
@@ -57,6 +58,7 @@
                 <h4 id="day2"></h4>
                 <p>Temp: <span id="temp2"></span></p>
                 <p>Humidity: <span id="humidity2"></span></p>
+                <div class="day2picture"></div>
             </div>
         </div>
         <div class="card">
@@ -64,6 +66,7 @@
                 <h4 id="day3"></h4>
                 <p>Temp: <span id="temp3"></span></p>
                 <p>Humidity: <span id="humidity3"></span></p>
+                <div class="day3picture"></div>
             </div>
         </div>
         <div class="card">
@@ -71,6 +74,7 @@
                 <h4 id="day4"></h4>
                 <p>Temp: <span id="temp4"></span></p>
                 <p>Humidity: <span id="humidity4"></span></p>
+                <div class="day4picture"></div>
             </div>
         </div>
         <div class="card">
@@ -78,6 +82,7 @@
                 <h4 id="day5"></h4>
                 <p>Temp: <span id="temp5"></span></p>
                 <p>Humidity: <span id="humidity5"></span></p>
+                <div class="day5picture"></div>
             </div>
         </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
