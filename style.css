@@ -8,3 +8,10 @@
     
     font-size: large;
   }
+
+  .extreme {color: rebeccapurple}
+  .very-high {color: red}
+  .high {color: orange}
+  .moderate {color: yellow}
+  .safe{color:green}
+  

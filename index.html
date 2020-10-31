@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <script src="https://kit.fontawesome.com/f146d64d33.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the Weather Dashboard</h1>
+        <i class="fas fa-cloud-moon-rain"></i>
+
+
     </div>
     <div id="lastSearched">
-        
+        <h1>Previously Searched Areas</h1>
         <div class='city-list'>
+            
 
 
         </div>
@@ -21,7 +26,7 @@
                     <h4>Search for a City:</h4>
                     <!--Form to input city-->
                         <form class="form">
-                            <input id="city-input" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <input id="city-input" class="form-control" type="text" placeholder="Search">
                             <button id="search" type="submit">Search</button>
                         </form>
 
@@ -33,9 +38,7 @@
                             <h4>UV-Index: <span id=uvIndex></span></h4>
 
                         </form>
-                    <form id="searchhistory" class="mt-1">
-  
-                    </form>
+        
                 </nav>
      
 
