@@ -94,6 +94,7 @@ $. ajax({
         function invokeTime(time) {
             if (moment.unix(everything.current.dt).format("kkmm") > 1600) {
                 console.log("testing time function it works!");
+                // going to do more cool stuff with this in the future //
             }
         }
         // if (mainTemp < 80) {
@@ -123,7 +124,7 @@ $. ajax({
 
         var day1Time = document.getElementById('day1')
         //this is important. unix must be used in order to calculate anything time related in the response //
-        day1Time.innerHTML = moment.unix(everything.daily[1].dt).format("[The day will be] dddd [of] MMMM YYYY [---] MM/DD/YYYY");
+        day1Time.innerHTML = moment.unix(everything.daily[1].dt).format("dddd[,] MMMM Do YYYY [---] MM/DD/YYYY");
         console.log(day1Time)
         $('#temp1').text(`${everything.daily[1].temp.day} °F`);
         $('#humidity1').text(`${everything.daily[1].humidity}%`);
@@ -140,7 +141,7 @@ $. ajax({
 
 
         var day2Time = document.getElementById('day2');
-        day2Time.innerHTML = moment.unix(everything.daily[2].dt).format("[The day will be] dddd [of] MMMM YYYY [---] MM/DD/YYYY");
+        day2Time.innerHTML = moment.unix(everything.daily[2].dt).format("dddd[,] MMMM Do YYYY [---] MM/DD/YYYY");
         console.log(day2Time)
         $('#temp2').text(`${everything.daily[2].temp.day} °F`);
         $('#humidity2').text(`${everything.daily[2].humidity}%`);
@@ -150,7 +151,7 @@ $. ajax({
         sunset2.innerHTML = moment.unix(everything.daily[2].sunrise).format("h[:]mA");
 
         var day3Time = document.getElementById('day3')
-        day3Time.innerHTML = moment.unix(everything.daily[3].dt).format("[The day will be] dddd [of] MMMM YYYY [---] MM/DD/YYYY");
+        day3Time.innerHTML = moment.unix(everything.daily[3].dt).format("dddd[,] MMMM Do YYYY [---] MM/DD/YYYY");
         console.log(day3Time)
         $('#temp3').text(`${everything.daily[3].temp.day} °F`)
         $('#humidity3').text(`${everything.daily[3].humidity}%`)
@@ -160,7 +161,7 @@ $. ajax({
         sunset3.innerHTML = moment.unix(everything.daily[3].sunrise).format("h[:]mA");
 
         var day4Time = document.getElementById('day4')
-        day4Time.innerHTML = moment.unix(everything.daily[4].dt).format("[The day will be] dddd [of] MMMM YYYY [---] MM/DD/YYYY");
+        day4Time.innerHTML = moment.unix(everything.daily[4].dt).format("dddd[,] MMMM Do YYYY [---] MM/DD/YYYY");
         console.log(day4Time)
         $('#temp4').text(`${everything.daily[4].temp.day} °F`)
         $('#humidity4').text(`${everything.daily[4].humidity}%`)
@@ -171,7 +172,7 @@ $. ajax({
         sunset4.innerHTML = moment.unix(everything.daily[4].sunrise).format("h[:]mA");
 
         var day5Time = document.getElementById('day5')
-        day5Time.innerHTML = moment.unix(everything.daily[5].dt).format("[The day will be] dddd [of] MMMM YYYY [---] MM/DD/YYYY");
+        day5Time.innerHTML = moment.unix(everything.daily[5].dt).format("dddd[,] MMMM Do YYYY [---] MM/DD/YYYY");
         console.log(day5Time)
         $('#temp5').text(`${everything.daily[5].temp.day} °F`)
         $('#humidity5').text(`${everything.daily[5].humidity}%`)

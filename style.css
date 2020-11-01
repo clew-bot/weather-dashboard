@@ -1,6 +1,4 @@
-body {
-  background-color: burlywood;
-}
+
 .item {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -10,15 +8,14 @@ body {
     stroke: black;
    
   }
-
-
   .extreme {color: rebeccapurple}
   .very-high {color: red}
   .high {color: orange}
   .moderate {color: yellow}
   .safe{color:green}
 
-
+#uvBox {border: 1px solid gray; background-color: burlywood; border-radius: 5px;}
+#fiveD {text-align: center;}
 #titleHeading {
   text-align: center;
   font-family: 'Raleway', sans-serif;

@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <script src="https://kit.fontawesome.com/f146d64d33.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Dashboard</title>
+<script src="https://kit.fontawesome.com/f146d64d33.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<div class="p-3 mb-2 bg-secondary text-white">
 <body>
     <div class="container">
-        <h1 id="titleHeading">Welcome to the Weather Dashboard</h1>
+        <h1 id="titleHeading">Console.log("Weather Dashboard")</h1></div>
     </div>
     <div class="container">
-        <table id="table">
-            <!--This table took awhile to figure out with the local storage-->
-        <tr>
-            <th>Previously Searched Areas</th>
-        </tr>
+<table id="table">        
+    <tr>
+        <th>Previously Searched Areas</th>
+    </tr>
         <tr id="tableRow" class='city-list'></tr>
+        <!--local storage appends here-->
     </div>
 
-
-        
-    </table>
+</table>
   <button id="clearStorage">Wipe History</button>
-                <nav class="navbar">
-                    <h4 id="letItSearch">Search for a City:</h4>
-                    <!--Form to input city-->
-                        <!-- <form class="form">
-                            <input id="city-input" class="input-group flex-nowrap" type="text" placeholder="Search">
-                            <button id="search" type="submit">Search</button>
-                        </form> -->
-
-
-
-
+                <div>
+                    <h4 id="letItSearch">Search a City:</h4>
+                    <!--some bootstrap for help-->             
                         <div class="input-group flex-nowrap">
                             <div class="input-group-prepend">
                               <span class="input-group-text" id="addon-wrapping"><i class="fas fa-rainbow"></i></span>
@@ -45,40 +36,32 @@
                             <button id="search" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
                           </div>
 
-
-
-
                         <!--Current weather information-->
-                        <h4>Current Weather Statistics:</h2>
+                        <h4>Current Weather Statistics:</h4>
                         <form id="currentWeatherInfo"><br>
                             <h5>Temperature: <span id=temp></span><span id="tempPic" class="fas"> </span></h4>
                             <h5>Wind Speed: <span id=windSpeed></span></h4>
                             <h5>Humidity: <span id=humidity></span></h4>
-                            <h5>UV-Index: <span id=uvIndex></span></h4>
+                            <h5 id="uvBox"><a href="https://en.wikipedia.org/wiki/Ultraviolet_index#:~:text=The%20UV%20index%20is%20a,essentially%20the%20case%20at%20night." target="blank">UV Index</a> <span id=uvIndex></span></h4>
                             <div class="mainContainer"></div>
-                        </form>
-        
-                </nav>
+                        </form>       
+                </div>
      
-
-
-                
-            <h1>Five Day Weather Forecast</h1>
-            <div class="cardContainer container">
+                    <!--**************start of the five day weather forecast section*******************-->
+            <h1 id="fiveD">Five Day Weather Forecast</h1>
+<div class="cardContainer container">
  
             <div class="card">
                 <div class="card-body">
-                    
-                <h4 id="day1"></h4>
-                
-                <p>Temp: <span id="temp1"></span></p>
-                <p>Humidity: <span id="humidity1"></span></p>
-                <p>Sunrise: <span id="sunrise1"></span><span class="right fas"></span></p>
-                <p>Sunset: <span id="sunset1"></span><span class="left far"></span></p>
-                <div class="day1picture"></div>
+                    <h4 id="day1"></h4>               
+                        <p>Temp: <span id="temp1"></span></p>
+                        <p>Humidity: <span id="humidity1"></span></p>
+                        <p>Sunrise: <span id="sunrise1"></span><span class="right fas"></span></p>
+                        <p>Sunset: <span id="sunset1"></span><span class="left far"></span></p>
+                        <div class="day1picture"></div>
             
-        </div>
-    </div>
+                </div>
+            </div>
 
             <div class="card">
                 <div class="card-body">
@@ -102,33 +85,29 @@
                 </div>
             </div>
      
-            <div class="card">
-
-                <h4 id="day4"></h4>
+            <div class="card">                
                 <div class="card-body">
-                  
-                <p>Temp: <span id="temp4"></span></p>
-                <p>Humidity: <span id="humidity4"></span></p>
-                <p>Sunrise: <span id="sunrise4"></span><span class="right fas"></span></p>
-                <p>Sunset: <span id="sunset4"></span><span class="left far"></span></p>
-                <div class="day4picture"></div>
+                    <h4 id="day4"></h4>
+                        <p>Temp: <span id="temp4"></span></p>
+                        <p>Humidity: <span id="humidity4"></span></p>
+                        <p>Sunrise: <span id="sunrise4"></span><span class="right fas"></span></p>
+                        <p>Sunset: <span id="sunset4"></span><span class="left far"></span></p>
+                        <div class="day4picture"></div>
+                </div>   
             </div>
-      
-    </div>
+   
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="day5"></h4>
+                        <p>Temp: <span id="temp5"></span></p>
+                        <p>Humidity: <span id="humidity5"></span></p>
+                        <p>Sunrise: <span id="sunrise5"></span><span class="right fas"></span></p>
+                        <p>Sunset: <span id="sunset5"></span><span class="left far"></span></p>
+                        <div class="day5picture"></div>
+                </div>
+            </div>
 </div>
-       
-     
-            <div class="card">
-                <div class="card-body">
-                <h4 id="day5"></h4>
-                <p>Temp: <span id="temp5"></span></p>
-                <p>Humidity: <span id="humidity5"></span></p>
-                <p>Sunrise: <span id="sunrise5"></span><span class="right fas"></span></p>
-                <p>Sunset: <span id="sunset5"></span><span class="left far"></span></p>
-                <div class="day5picture"></div>
-            </div>
-        </div>
-    </div>
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="./weather.js"></script>
