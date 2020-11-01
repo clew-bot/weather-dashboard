@@ -6,36 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <script src="https://kit.fontawesome.com/f146d64d33.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Weather Dashboard</h1>
-      
-
-
+        <h1 id="titleHeading">Welcome to the Weather Dashboard</h1>
     </div>
-    <div id="lastSearched">
-        <h1>Previously Searched Areas</h1>
-        <div class='city-list'>
-            
-
-
-        </div>
+    <div class="container">
+        <table id="table">
+            <!--This table took awhile to figure out with the local storage-->
+        <tr>
+            <th>Previously Searched Areas</th>
+        </tr>
+        <tr id="tableRow" class='city-list'></tr>
     </div>
+
+
+        
+    </table>
+  <button id="clearStorage">Wipe History</button>
                 <nav class="navbar">
-                    <h4>Search for a City:</h4>
+                    <h4 id="letItSearch">Search for a City:</h4>
                     <!--Form to input city-->
-                        <form class="form">
-                            <input id="city-input" class="form-control" type="text" placeholder="Search">
+                        <!-- <form class="form">
+                            <input id="city-input" class="input-group flex-nowrap" type="text" placeholder="Search">
                             <button id="search" type="submit">Search</button>
-                        </form>
+                        </form> -->
+
+
+
+
+                        <div class="input-group flex-nowrap">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-rainbow"></i></span>
+                            </div>
+                            <input id="city-input" type="text" class="form-control" placeholder="Type any city..." aria-label="Username" aria-describedby="addon-wrapping">
+                            <button id="search" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                          </div>
+
+
+
 
                         <!--Current weather information-->
-                        <form id="currentWeatherInfo">
-                            <h4>Temperature: <span id=temp></span><span id="tempPic" class="fas"> </span></h4>
-                            <h4>Wind Speed: <span id=windSpeed></span></h4>
-                            <h4>Humidity: <span id=humidity></span></h4>
-                            <h4>UV-Index: <span id=uvIndex></span></h4>
+                        <h4>Current Weather Statistics:</h2>
+                        <form id="currentWeatherInfo"><br>
+                            <h5>Temperature: <span id=temp></span><span id="tempPic" class="fas"> </span></h4>
+                            <h5>Wind Speed: <span id=windSpeed></span></h4>
+                            <h5>Humidity: <span id=humidity></span></h4>
+                            <h5>UV-Index: <span id=uvIndex></span></h4>
                             <div class="mainContainer"></div>
                         </form>
         
@@ -45,46 +64,71 @@
 
                 
             <h1>Five Day Weather Forecast</h1>
-        <div class="card">
-            <div class="container">
+            <div class="cardContainer container">
+ 
+            <div class="card">
+                <div class="card-body">
+                    
                 <h4 id="day1"></h4>
+                
                 <p>Temp: <span id="temp1"></span></p>
                 <p>Humidity: <span id="humidity1"></span></p>
+                <p>Sunrise: <span id="sunrise1"></span><span class="right fas"></span></p>
+                <p>Sunset: <span id="sunset1"></span><span class="left far"></span></p>
                 <div class="day1picture"></div>
-            </div>
+            
         </div>
-        <div class="card">
-            <div class="container">
-                <h4 id="day2"></h4>
-                <p>Temp: <span id="temp2"></span></p>
-                <p>Humidity: <span id="humidity2"></span></p>
-                <div class="day2picture"></div>
+    </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="day2"></h4>
+                        <p>Temp: <span id="temp2"></span></p>
+                        <p>Humidity: <span id="humidity2"></span></p>
+                        <p>Sunrise: <span id="sunrise2"></span><span class="right fas"></span></p>
+                        <p>Sunset: <span id="sunset2"></span><span class="left far"></span></p>
+                        <div class="day2picture"></div>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="container">
-                <h4 id="day3"></h4>
-                <p>Temp: <span id="temp3"></span></p>
-                <p>Humidity: <span id="humidity3"></span></p>
-                <div class="day3picture"></div>
+        
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="day3"></h4>
+                        <p>Temp: <span id="temp3"></span></p>
+                        <p>Humidity: <span id="humidity3"></span></p>
+                        <p>Sunrise: <span id="sunrise3"></span><span class="right fas"></span></p>
+                        <p>Sunset: <span id="sunset3"></span><span class="left far"></span></p>
+                        <div class="day3picture"></div>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="container">
+     
+            <div class="card">
+
                 <h4 id="day4"></h4>
+                <div class="card-body">
+                  
                 <p>Temp: <span id="temp4"></span></p>
                 <p>Humidity: <span id="humidity4"></span></p>
+                <p>Sunrise: <span id="sunrise4"></span><span class="right fas"></span></p>
+                <p>Sunset: <span id="sunset4"></span><span class="left far"></span></p>
                 <div class="day4picture"></div>
             </div>
-        </div>
-        <div class="card">
-            <div class="container">
+      
+    </div>
+</div>
+       
+     
+            <div class="card">
+                <div class="card-body">
                 <h4 id="day5"></h4>
                 <p>Temp: <span id="temp5"></span></p>
                 <p>Humidity: <span id="humidity5"></span></p>
+                <p>Sunrise: <span id="sunrise5"></span><span class="right fas"></span></p>
+                <p>Sunset: <span id="sunset5"></span><span class="left far"></span></p>
                 <div class="day5picture"></div>
             </div>
         </div>
+    </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="./weather.js"></script>
