@@ -1,7 +1,8 @@
 $(document).ready(function() {
     console.log("rock and roll");
 var searchBtn = document.getElementById("search");
-
+var hideAndShow = document.getElementById('hideAndShow')
+hideAndShow.setAttribute("style", "display:none;");
 //if there's nothing in local storage set an empty array, if there is something in local storage then grab it //
 let cityList = !localStorage.getItem('city list') ? [] : JSON.parse(localStorage.getItem('city list'));
 
@@ -29,7 +30,8 @@ function wipeHistory() {
 //main course //
 searchBtn.addEventListener("click", citySearch);
 function citySearch(city) {
-    
+    var hideAndShow = document.getElementById('hideAndShow')
+    hideAndShow.setAttribute("style", "display:block;");
     
     city.preventDefault();
     
